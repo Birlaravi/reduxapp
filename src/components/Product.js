@@ -9,7 +9,7 @@ export const Product = () => {
   const dispatch=useDispatch();
 
   useEffect(() => {
-    fetch("https://api.escuelajs.co/api/v1/products").then((result) => {
+    fetch("https://fakestoreapi.com/products").then((result) => {
       result.json().then((data) => {
         setProduct(data);
       });
@@ -30,7 +30,7 @@ export const Product = () => {
           <div className="product-container" key={data.id}>
             <h3>{data.title}</h3>
             <div className="ProductImage">
-              <img src={data.category.image} alt="" />
+              <img src={data.image} alt="" />
             </div>
             <h3>Price $ {data.price}</h3>
             <p>{data.description}</p>
